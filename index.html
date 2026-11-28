@@ -59,7 +59,7 @@ h1{font-size:25px;margin:0 0 4px}h2{font-size:19px;margin:0 0 14px}h3{font-size:
 </div>
 <div class="section panel">
 <div class="split"><h2>Comparaison des secteurs</h2><input class="search" id="zoneSearch" placeholder="Rechercher un secteur…"></div>
-<div class="table-wrap"><table><thead><tr><th>Secteur</th><th>Ancien effectif</th><th>Baptisés</th><th>Intégrés</th><th>Départs</th><th>Arrivées</th><th>Nouvel effectif</th><th>Présents</th><th>Taux présence</th><th>Invités</th><th>Âmes gagnées</th><th>Assemblées</th><th>Fonctionnelles</th><th>Familles</th><th>Lieux</th><th>Statut</th></tr></thead><tbody id="zoneRows"></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Secteur</th><th>Ancien Effectif</th><th>Baptême</th><th>Intégration</th><th>Départ</th><th>Arrivée</th><th>Nouvel Effectif</th><th>Présents Adoration</th><th>Taux de Présence</th><th>Brisement de Liens</th><th>Invités</th><th>Âmes Gagnées</th><th>Nbre Assemblées</th><th>Assemblées Fonctionnelles</th><th>Nvelles Familles</th><th>Total Lieux d'adoration</th><th>Statut</th></tr></thead><tbody id="zoneRows"></tbody></table></div>
 </div>
 </section>
 
@@ -70,18 +70,19 @@ h1{font-size:25px;margin:0 0 4px}h2{font-size:19px;margin:0 0 14px}h3{font-size:
 <div class="form-grid">
 <div class="field"><label>Secteur</label><select id="zone"></select></div>
 <div class="field"><label>Date de référence de la semaine</label><input type="date" id="weekDate"></div>
-<div class="field"><label>Ancien effectif</label><input type="number" min="0" id="old" value="0"></div>
-<div class="field"><label>Baptisés</label><input type="number" min="0" id="bapt" value="0"></div>
-<div class="field"><label>Intégrés</label><input type="number" min="0" id="integrated" value="0"></div>
-<div class="field"><label>Départs du secteur</label><input type="number" min="0" id="departures" value="0"></div>
-<div class="field"><label>Arrivées au secteur</label><input type="number" min="0" id="arrivals" value="0"></div>
-<div class="field"><label>Présents à l'adoration</label><input type="number" min="0" id="present" value="0"></div>
-<div class="field"><label>Âmes invitées</label><input type="number" min="0" id="invited" value="0"></div>
-<div class="field"><label>Âmes gagnées</label><input type="number" min="0" id="won" value="0"></div>
-<div class="field"><label>Nombre d'assemblées</label><input type="number" min="0" id="assemblies" value="0"></div>
-<div class="field"><label>Assemblées fonctionnelles</label><input type="number" min="0" id="functional" value="0"></div>
-<div class="field"><label>Familles</label><input type="number" min="0" id="families" value="0"></div>
-<div class="field"><label>Total des lieux</label><input type="number" min="0" id="places" value="0"></div>
+<div class="field"><label>Ancien Effectif</label><input type="number" min="0" id="old" value="0"></div>
+<div class="field"><label>Baptême</label><input type="number" min="0" id="bapt" value="0"></div>
+<div class="field"><label>Intégration</label><input type="number" min="0" id="integrated" value="0"></div>
+<div class="field"><label>Départ</label><input type="number" min="0" id="departures" value="0"></div>
+<div class="field"><label>Arrivée</label><input type="number" min="0" id="arrivals" value="0"></div>
+<div class="field"><label>Présents Adoration</label><input type="number" min="0" id="present" value="0"></div>
+<div class="field"><label>Brisement de Liens</label><input type="number" min="0" id="brisement" value="0"></div>
+<div class="field"><label>Invités</label><input type="number" min="0" id="invited" value="0"></div>
+<div class="field"><label>Âmes Gagnées</label><input type="number" min="0" id="won" value="0"></div>
+<div class="field"><label>Nbre Assemblées</label><input type="number" min="0" id="assemblies" value="0"></div>
+<div class="field"><label>Assemblées Fonctionnelles</label><input type="number" min="0" id="functional" value="0"></div>
+<div class="field"><label>Nvelles Familles</label><input type="number" min="0" id="families" value="0"></div>
+<div class="field"><label>Total Lieux d'adoration</label><input type="number" min="0" id="places" value="0"></div>
 </div>
 <div class="result" id="calculation">Nouvel effectif : 0 · Taux de présence : 0%</div>
 <div class="actions"><button class="btn" id="saveDraft">Enregistrer comme brouillon</button><button class="btn secondary" id="submitZone">Confirmer la transmission</button><button class="btn secondary" id="clearForm">Effacer le formulaire</button></div>
@@ -90,7 +91,7 @@ h1{font-size:25px;margin:0 0 4px}h2{font-size:19px;margin:0 0 14px}h3{font-size:
 
 <section id="validation" class="tab hidden">
 <div class="panel"><h2>Contrôle du dirigeant du sous-centre</h2><p class="muted">Les transmissions confirmées par les dirigeants de secteur apparaissent ici. Le dirigeant du sous-centre peut modifier directement les chiffres, puis valider la transmission avant de transmettre le bilan au dirigeant de la zone de Yopougon. Les modifications sont journalisées dans cette maquette.</p>
-<div class="table-wrap"><table><thead><tr><th>Semaine</th><th>Secteur</th><th>Nouvel effectif</th><th>Présents</th><th>Statut</th><th>Action</th></tr></thead><tbody id="validationRows"></tbody></table></div></div>
+<div class="table-wrap"><table><thead><tr><th>Semaine</th><th>Secteur</th><th>Nouvel effectif</th><th>Présents Adoration</th><th>Brisement de Liens</th><th>Statut</th><th>Action</th></tr></thead><tbody id="validationRows"></tbody></table></div></div>
 </section>
 
 <section id="whatsapp" class="tab hidden">
@@ -123,8 +124,8 @@ h1{font-size:25px;margin:0 0 4px}h2{font-size:19px;margin:0 0 14px}h3{font-size:
 <script src="./vendor/jspdf.plugin.autotable.min.js"></script>
 <script>
 let zones=["CAMP MILITAIRE","JEAN-PAUL 2","NOUVEAU QUARTIER","BÉTHEL","GHANDI","TOIT-ROUGE","RÉSIDENTIEL"];
-const fields=["old","bapt","integrated","departures","arrivals","present","invited","won","assemblies","functional","families","places"];
-const labels={old:"Ancien effectif",bapt:"Baptisés",integrated:"Intégrés",departures:"Départs",arrivals:"Arrivées",present:"Présents",invited:"Invités",won:"Âmes gagnées",assemblies:"Assemblées",functional:"Fonctionnelles",families:"Familles",places:"Lieux"};
+const fields=["old","bapt","integrated","departures","arrivals","present","brisement","invited","won","assemblies","functional","families","places"];
+const labels={old:"Ancien Effectif",bapt:"Baptême",integrated:"Intégration",departures:"Départ",arrivals:"Arrivée",present:"Présents Adoration",brisement:"Brisement de Liens",invited:"Invités",won:"Âmes Gagnées",assemblies:"Nbre Assemblées",functional:"Assemblées Fonctionnelles",families:"Nvelles Familles",places:"Total Lieux d'adoration"};
 const API=(window.APP_CONFIG||{}).API_URL;
 let S=null,records=[];
 try{S=JSON.parse(localStorage.getItem('sess')||sessionStorage.getItem('sess')||'null')}catch(e){}
@@ -155,21 +156,21 @@ async function busy(b,fn){b.disabled=true;try{await fn()}catch(e){alert('Échec 
 async function refresh(){const j=await api('list');records=j.records;if(j.zones){zones=j.zones;syncZoneOptions()}render();if(S&&S.role==='chef')renderSectors()}
 async function setup(){await loadPublicZones();syncZoneOptions();$("weekDate").value=new Date().toISOString().slice(0,10);$("weekLabel").textContent="Mis à jour : "+new Date().toLocaleDateString("fr-FR");}
 function readForm(status){let r={zone:$("zone").value,date:$("weekDate").value,status,createdAt:new Date().toISOString()};fields.forEach(f=>r[f]=num(f));return calc(r)}
-function formCalc(){let r=readForm("brouillon");$("calculation").textContent=`Nouvel effectif : ${fmt(r.newEffectif)} · Taux de présence : ${r.rate.toFixed(1).replace(".",",")}% (présents ÷ ancien effectif)`;}
+function formCalc(){let r=readForm("brouillon");$("calculation").textContent=`Nouvel Effectif : ${fmt(r.newEffectif)} · Taux de Présence : ${r.rate.toFixed(1).replace(".",",")}% (présents ÷ ancien effectif)`;}
 function render(){let latest=zones.map(z=>records.filter(r=>r.zone===z).sort((a,b)=>(b.date||"").localeCompare(a.date||""))[0]).filter(Boolean);
 let sum=k=>latest.reduce((a,r)=>a+(Number(r[k])||0),0),old=sum("old"),present=sum("present");
 $("totalOld").textContent=fmt(old);$("totalNew").textContent=fmt(sum("newEffectif"));$("totalPresent").textContent=fmt(present);$("totalRate").textContent=(old?100*present/old:0).toFixed(1).replace(".",",")+"%";
 let q=($("zoneSearch").value||"").toLowerCase();
-$("zoneRows").innerHTML=zones.filter(z=>z.toLowerCase().includes(q)).map(z=>{let r=latest.find(x=>x.zone===z);if(!r)return `<tr><td>${z}</td><td colspan="14" style="text-align:center;color:#8a96a7">Aucune transmission enregistrée</td><td><span class="pill">En attente</span></td></tr>`;return `<tr><td>${z}</td><td>${fmt(r.old)}</td><td>${fmt(r.bapt)}</td><td>${fmt(r.integrated)}</td><td>${fmt(r.departures)}</td><td>${fmt(r.arrivals)}</td><td>${fmt(r.newEffectif)}</td><td>${fmt(r.present)}</td><td>${r.rate.toFixed(1).replace(".",",")}%</td><td>${fmt(r.invited)}</td><td>${fmt(r.won)}</td><td>${fmt(r.assemblies)}</td><td>${fmt(r.functional)}</td><td>${fmt(r.families)}</td><td>${fmt(r.places)}</td><td><span class="pill ${r.status==="validé"?"valid":"pending"}">${esc(r.status)}</span></td></tr>`}).join("");
+$("zoneRows").innerHTML=zones.filter(z=>z.toLowerCase().includes(q)).map(z=>{let r=latest.find(x=>x.zone===z);if(!r)return `<tr><td>${z}</td><td colspan="15" style="text-align:center;color:#8a96a7">Aucune transmission enregistrée</td><td><span class="pill">En attente</span></td></tr>`;return `<tr><td>${z}</td><td>${fmt(r.old)}</td><td>${fmt(r.bapt)}</td><td>${fmt(r.integrated)}</td><td>${fmt(r.departures)}</td><td>${fmt(r.arrivals)}</td><td>${fmt(r.newEffectif)}</td><td>${fmt(r.present)}</td><td>${r.rate.toFixed(1).replace(".",",")}%</td><td>${fmt(r.brisement)}</td><td>${fmt(r.invited)}</td><td>${fmt(r.won)}</td><td>${fmt(r.assemblies)}</td><td>${fmt(r.functional)}</td><td>${fmt(r.families)}</td><td>${fmt(r.places)}</td><td><span class="pill ${r.status==="validé"?"valid":"pending"}">${esc(r.status)}</span></td></tr>`}).join("");
 let pending=records.filter(r=>r.status==="transmis" || r.status==="à vérifier après modification");
-$("validationRows").innerHTML=pending.length?pending.map((r)=>`<tr><td>${esc(r.date)}</td><td>${r.zone}</td><td>${fmt(r.newEffectif)}</td><td>${fmt(r.present)}</td><td><span class="pill pending">À vérifier</span></td><td><button class="btn" onclick="editRecord('${esc(r.createdAt)}')">Modifier</button> <button class="btn secondary" onclick="validateRecord('${esc(r.createdAt)}')">Valider</button> <button class="btn secondary" onclick="returnRecord('${esc(r.createdAt)}')">Retourner</button></td></tr>`).join(""):`<tr><td colspan="6" style="text-align:center">Aucune transmission en attente.</td></tr>`;
+$("validationRows").innerHTML=pending.length?pending.map((r)=>`<tr><td>${esc(r.date)}</td><td>${r.zone}</td><td>${fmt(r.newEffectif)}</td><td>${fmt(r.present)}</td><td>${fmt(r.brisement)}</td><td><span class="pill pending">À vérifier</span></td><td><button class="btn" onclick="editRecord('${esc(r.createdAt)}')">Modifier</button> <button class="btn secondary" onclick="validateRecord('${esc(r.createdAt)}')">Valider</button> <button class="btn secondary" onclick="returnRecord('${esc(r.createdAt)}')">Retourner</button></td></tr>`).join(""):`<tr><td colspan="7" style="text-align:center">Aucune transmission en attente.</td></tr>`;
 $("historyRows").innerHTML=records.slice().sort((a,b)=>(b.date||"").localeCompare(a.date||"")).map(r=>`<tr><td>${esc(r.date)}</td><td>${r.zone}</td><td>${fmt(r.old)}</td><td>${fmt(r.newEffectif)}</td><td>${fmt(r.present)}</td><td>${r.rate.toFixed(1).replace(".",",")}%</td><td>${esc(r.status)}</td></tr>`).join("")||`<tr><td colspan="7" style="text-align:center">Aucun historique pour le moment.</td></tr>`;
 const bk=S&&S.role==='zone'?records.filter(r=>r.status==='à corriger'):[];$('retour').classList.toggle('hidden',!bk.length);if(bk.length)$('retour').textContent='Le dirigeant du sous-centre a retourné la transmission du '+bk.map(r=>r.date).join(', ')+' pour correction. Corrigez les chiffres, choisissez la même date et transmettez à nouveau.';
 updateReport();}
 function updateReport(){
  const E=reportData(),data=E.rows.filter(Boolean);
  const lines=["*SUIVI DES EFFECTIFS – SOUS-CENTRE DE TOIT ROUGE*","Zone de Yopougon · Sous-centre de Toit Rouge",E.reportDate?"Semaine du "+weekRange(E.reportDate):"", ""];
- data.forEach(r=>lines.push(`*${r.zone}*`, `Ancien effectif : ${fmt(r.old)}`,`Baptisés : ${fmt(r.bapt)}`,`Intégrés : ${fmt(r.integrated)}`,`Départs : ${fmt(r.departures)}`,`Arrivées : ${fmt(r.arrivals)}`,`Nouvel effectif : ${fmt(r.newEffectif)}`,`Présents à l'adoration : ${fmt(r.present)}`,`Taux de présence : ${r.rate.toFixed(1).replace(".",",")}%`,`Âmes invitées : ${fmt(r.invited)}`,`Âmes gagnées : ${fmt(r.won)}`,`Assemblées : ${fmt(r.assemblies)} · Fonctionnelles : ${fmt(r.functional)}`,`Familles : ${fmt(r.families)} · Lieux : ${fmt(r.places)}`,""));
+ data.forEach(r=>lines.push(`*${r.zone}*`, `Ancien effectif : ${fmt(r.old)}`,`Baptême : ${fmt(r.bapt)}`,`Intégration : ${fmt(r.integrated)}`,`Départ : ${fmt(r.departures)}`,`Arrivée : ${fmt(r.arrivals)}`,`Nouvel effectif : ${fmt(r.newEffectif)}`,`Présents Adoration : ${fmt(r.present)}`,`Taux de Présence : ${r.rate.toFixed(1).replace(".",",")}%`,`Brisement de Liens : ${fmt(r.brisement)}`,`Invités : ${fmt(r.invited)}`,`Âmes Gagnées : ${fmt(r.won)}`,`Nbre Assemblées : ${fmt(r.assemblies)} · Assemblées Fonctionnelles : ${fmt(r.functional)}`,`Nvelles Familles : ${fmt(r.families)} · Total Lieux d'adoration : ${fmt(r.places)}`,""));
  if(!data.length)lines.push("Aucune transmission validée disponible pour cette période.");
  $("reportPreview").textContent=lines.join("\\n");
 }
@@ -255,11 +256,11 @@ function reportData(){
  const rows=names.map(z=>records.filter(r=>r.zone===z&&r.status==="validé"&&r.date===reportDate).sort(byDate)[0]||null);
  return {rows,names,reportDate};
 }
-const XCOLS=["Secteur","Semaine du","Ancien\\neffectif","Baptisés","Intégrés","Départs","Arrivées","Nouvel\\neffectif","Présents","Taux de\\nprésence","Invités","Âmes\\ngagnées","Assemblées","Fonctionnelles","Familles","Lieux"];
-const XKEYS=["old","bapt","integrated","departures","arrivals","newEffectif","present"];
-function exportTable(){const {rows,names}=reportData();const tot={};["old","bapt","integrated","departures","arrivals","newEffectif","present","invited","won","assemblies","functional","families","places"].forEach(k=>tot[k]=rows.reduce((a,r)=>a+(r?Number(r[k])||0:0),0));tot.rate=tot.old?100*tot.present/tot.old:0;
- const line=(n,r)=>r?[n,weekRange(r.date),r.old,r.bapt,r.integrated,r.departures,r.arrivals,r.newEffectif,r.present,r.rate,r.invited,r.won,r.assemblies,r.functional,r.families,r.places]:[n,"Non validé",...Array(14).fill(null)];
- const body=names.map((n,i)=>line(n,rows[i]));const foot=["TOTAL","",tot.old,tot.bapt,tot.integrated,tot.departures,tot.arrivals,tot.newEffectif,tot.present,tot.rate,tot.invited,tot.won,tot.assemblies,tot.functional,tot.families,tot.places];
+const XCOLS=["Secteur","Semaine du","Ancien Effectif","Baptême","Intégration","Départ","Arrivée","Nouvel Effectif","Présents Adoration","Taux de Présence","Brisement de Liens","Invités","Âmes Gagnées","Nbre Assemblées","Assemblées Fonctionnelles","Nvelles Familles","Total Lieux d'adoration"];
+const XKEYS=["old","bapt","integrated","departures","arrivals","newEffectif","present","brisement"];
+function exportTable(){const {rows,names}=reportData();const tot={};["old","bapt","integrated","departures","arrivals","newEffectif","present","brisement","invited","won","assemblies","functional","families","places"].forEach(k=>tot[k]=rows.reduce((a,r)=>a+(r?Number(r[k])||0:0),0));tot.rate=tot.old?100*tot.present/tot.old:0;
+ const line=(n,r)=>r?[n,weekRange(r.date),r.old,r.bapt,r.integrated,r.departures,r.arrivals,r.newEffectif,r.present,r.rate,r.brisement,r.invited,r.won,r.assemblies,r.functional,r.families,r.places]:[n,"Non validé",...Array(15).fill(null)];
+ const body=names.map((n,i)=>line(n,rows[i]));const foot=["TOTAL","",tot.old,tot.bapt,tot.integrated,tot.departures,tot.arrivals,tot.newEffectif,tot.present,tot.rate,tot.brisement,tot.invited,tot.won,tot.assemblies,tot.functional,tot.families,tot.places];
  return {body,foot,count:rows.filter(Boolean).length}}
 const today=()=>new Date().toISOString().slice(0,10);
 function weekRange(iso){
@@ -278,8 +279,8 @@ function exportXlsx(){const E=exportTable();if(!E.count){alert("Aucune transmiss
  const first=5;for(let R=first;R<first+E.body.length+1;R++){const c=ws[XLSX.utils.encode_cell({r:R,c:9})];if(c&&typeof c.v==="number"){c.v=c.v/100;c.z="0.0%"}}
  ws["!cols"]=XCOLS.map((_,i)=>({wch:i===0?20:i===1?12:14}));
  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,"Bilan");
- const hist=records.slice().sort(byDate).map(r=>[r.date,r.zone,r.status,r.old,r.bapt,r.integrated,r.departures,r.arrivals,r.newEffectif,r.present,r.rate/100,r.invited,r.won,r.assemblies,r.functional,r.families,r.places]);
- const wh=XLSX.utils.aoa_to_sheet([["Semaine","Secteur","Statut",...XCOLS.slice(2)],...hist]);hist.forEach((_,i)=>{const c=wh[XLSX.utils.encode_cell({r:i+1,c:10})];if(c)c.z="0.0%"});wh["!cols"]=Array(17).fill({wch:14});
+ const hist=records.slice().sort(byDate).map(r=>[r.date,r.zone,r.status,r.old,r.bapt,r.integrated,r.departures,r.arrivals,r.newEffectif,r.present,r.rate/100,r.brisement,r.invited,r.won,r.assemblies,r.functional,r.families,r.places]);
+ const wh=XLSX.utils.aoa_to_sheet([["Semaine","Secteur","Statut",...XCOLS.slice(2)],...hist]);hist.forEach((_,i)=>{const c=wh[XLSX.utils.encode_cell({r:i+1,c:11})];if(c)c.z="0.0%"});wh["!cols"]=Array(17).fill({wch:14});
  XLSX.utils.book_append_sheet(wb,wh,"Historique");
  const out=XLSX.write(wb,{bookType:"xlsx",type:"array"});shareFile(new Blob([out],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}),fileName("xlsx"),"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")}
 function exportPdf(){const E=exportTable();if(!E.count){alert("Aucune transmission validée à exporter.");return}
@@ -289,7 +290,7 @@ function exportPdf(){const E=exportTable();if(!E.count){alert("Aucune transmissi
  doc.setFontSize(10);doc.setTextColor(60);doc.text("Zone de Yopougon - "+reportTitle(),34,20);doc.text("Date du rapport : "+new Date().toLocaleDateString("fr-FR"),34,25);
  const f=v=>v===null||v===undefined?"":String(v),pc=v=>typeof v==="number"?v.toFixed(1).replace(".",",")+" %":"";
  const row=r=>r.map((v,i)=>i===9?pc(v):f(v));
- doc.autoTable({startY:32,head:[XCOLS],body:E.body.map(row),foot:[row(E.foot)],theme:"grid",styles:{fontSize:7.2,cellPadding:1.4,halign:"center",valign:"middle",overflow:"linebreak"},columnStyles:{0:{halign:"left",fontStyle:"bold",cellWidth:27},1:{cellWidth:30},2:{cellWidth:16},3:{cellWidth:13},4:{cellWidth:13},5:{cellWidth:12},6:{cellWidth:13},7:{cellWidth:16},8:{cellWidth:13},9:{cellWidth:16},10:{cellWidth:12},11:{cellWidth:14},12:{cellWidth:15},13:{cellWidth:17},14:{cellWidth:13},15:{cellWidth:11}},headStyles:{fillColor:[7,58,130],textColor:255},footStyles:{fillColor:[230,238,250],textColor:[7,58,130],fontStyle:"bold"},margin:{left:10,right:10}});
+ doc.autoTable({startY:32,head:[XCOLS],body:E.body.map(row),foot:[row(E.foot)],theme:"grid",styles:{fontSize:7.2,cellPadding:1.4,halign:"center",valign:"middle",overflow:"linebreak"},columnStyles:{0:{halign:"left",fontStyle:"bold",cellWidth:24},1:{cellWidth:25},2:{cellWidth:14},3:{cellWidth:11},4:{cellWidth:11},5:{cellWidth:10},6:{cellWidth:11},7:{cellWidth:14},8:{cellWidth:13},9:{cellWidth:14},10:{cellWidth:12},11:{cellWidth:10},12:{cellWidth:12},13:{cellWidth:12},14:{cellWidth:15},15:{cellWidth:12},16:{cellWidth:16}},headStyles:{fillColor:[7,58,130],textColor:255},footStyles:{fillColor:[230,238,250],textColor:[7,58,130],fontStyle:"bold"},margin:{left:10,right:10}});
  shareFile(doc.output("blob"),fileName("pdf"),"application/pdf")}
 $("exportXlsx").onclick=exportXlsx;$("exportPdf").onclick=exportPdf;
 setup().then(()=>{formCalc();if(S)api('list').then(j=>{records=j.records;if(j.zones){zones=j.zones;syncZoneOptions()}enter()}).catch(e=>{if(/Code incorrect/.test(e.message)){sessionStorage.removeItem('sess');localStorage.removeItem('sess')}S=null;$('lErr').textContent=e.message})});

@@ -1,4 +1,4 @@
-const V="effectifs-v1";
+const V="effectifs-v3-brisement";
 const CORE=["./","./index.html","./config.js","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./vendor/xlsx.mini.min.js","./vendor/jspdf.umd.min.js","./vendor/jspdf.plugin.autotable.min.js"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==V).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
